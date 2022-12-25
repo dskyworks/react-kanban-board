@@ -1,0 +1,34 @@
+.body {
+  margin: 0;
+  background-color: var(--main-background-color);
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.root {
+  height: 100%;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 90px 20px 180px;
+  overflow-y: auto;
+}
+
+@media (max-width: 640px) {
+  .main {
+    padding: 90px 20px 210px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .main {
+    padding: 90px 20px 170px;
+  }
+}

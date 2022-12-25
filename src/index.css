@@ -1,0 +1,19 @@
+@font-face {
+  font-weight: 400;
+  font-family: "Roboto";
+  src: local("Roboto"), url(./assets/fonts/Roboto-Regular.ttf) format("opentype");
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-background-color: #0079bf;
+  --secondary-background-color: #0067a3;
+  --board-background-color: #ebecf0;
+  --gray-color: #5e6c84;
+  --white-color: #fff;
+  --black-color: #000;
+}

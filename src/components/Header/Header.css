@@ -1,0 +1,104 @@
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  width: 100%;
+  background: var(--secondary-background-color);
+  color: var(--white-color);
+}
+
+.header__title {
+  font-weight: 400;
+  font-size: 28px;
+}
+
+@media (max-width: 640px) {
+  .header__title {
+    font-size: 20px;
+  }
+}
+
+.header__profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.header__avatar {
+  border-radius: 50%;
+}
+
+.header__button {
+  position: relative;
+  display: block;
+  margin-left: 6px;
+  width: 12px;
+  height: 7px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.header__button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 12px;
+  height: 7px;
+  background-image: url("../../assets/images/header-profile-arrow.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+  transition: all 0.1s ease-in;
+}
+
+.header__button--active.header__button::after {
+  transform: rotate3d(100, 1, 1, 180deg);
+}
+
+.profile__list {
+  position: absolute;
+  top: 51px;
+  right: -11px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 134px;
+  border-radius: 5px;
+  background-color: var(--white-color);
+  color: var(--black-color);
+  list-style: none;
+  cursor: pointer;
+}
+
+.profile__list::before {
+  position: absolute;
+  top: -4px;
+  left: 80px;
+  z-index: -1;
+  width: 11px;
+  height: 11px;
+  background-color: var(--white-color);
+  content: "";
+  transform: rotate(45deg);
+}
+
+.profile__item {
+  padding: 8px;
+
+  border-radius: 5px;
+}
+
+.profile__item:hover {
+  background-color: #dedede;
+}
