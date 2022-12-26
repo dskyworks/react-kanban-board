@@ -7,6 +7,7 @@ const AddCardButton = ({ setAddingTask }) => {
     <button
       className="board__button board__button--add"
       onClick={handleAddingTask}
+      aria-label='add card'
     >
       + Add card
     </button>

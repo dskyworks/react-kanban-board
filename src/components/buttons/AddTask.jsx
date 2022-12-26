@@ -34,7 +34,7 @@ const AddTask = ({ tasksList, setTasksList }) => {
   const handleCloseAddingTask = () => {
     setInputValue("");
     setAddingTask(false);
-  }
+  };
 
   const handleKeyDown = (e) => {
     if (e.code === "Enter") {
@@ -56,6 +56,7 @@ const AddTask = ({ tasksList, setTasksList }) => {
               autoFocus={true}
               required={true}
               onKeyDown={handleKeyDown}
+              aria-label="enter task name"
             />
             <button
               className="board__input-close"
@@ -67,7 +68,8 @@ const AddTask = ({ tasksList, setTasksList }) => {
             className={"board__button board__button--submit"}
             disabled={!inputValue}
             onClick={handleAddTask}
-            type="submit"
+            type="button"
+            aria-label="add new card"
           >
             Submit
           </button>

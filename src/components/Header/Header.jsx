@@ -38,6 +38,9 @@ const Header = () => {
               : "header__button"
           }
           type="button"
+          aria-expanded={dropDownOpen && true}
+          aria-controls='profile__list'
+          aria-label={dropDownOpen ? "close profile menu" : "open profile menu"}
         ></button>
         {dropDownOpen && headerDropDownMenu}
       </div>

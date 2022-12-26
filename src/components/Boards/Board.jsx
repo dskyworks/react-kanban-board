@@ -28,6 +28,9 @@ const Board = ({ boardName, tasksList, setTasksList }) => {
           className="board__button board__button--add"
           disabled={!tasksList[prevBoard].tasks.length > 0}
           onClick={toggleDropDown}
+          aria-controls="dropdown-list"
+          aria-expanded={dropDownOpen && true}
+          aria-label="open a list of tasks to move to the current board"
         >
           + Add card
         </button>
@@ -95,15 +98,15 @@ const Board = ({ boardName, tasksList, setTasksList }) => {
       )}
       {dropDownOpen && (
         <>
-          <div
+          <button
             ref={dropDownRef}
             className="dropdown__select"
-            tabIndex={0}
+            type="button"
             onClick={toggleDropDown}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") setDropDownOpen(false);
-            }}
-          ></div>
+            aria-label="close the list of tasks to move"
+            aria-expanded={dropDownOpen && true}
+            aria-controls="dropdown-list"
+          ></button>
           <ul className="dropdown-list">{dropDownItems}</ul>
         </>
       )}
