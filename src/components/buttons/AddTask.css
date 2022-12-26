@@ -1,10 +1,103 @@
-.input {
-  margin-bottom: 10px;
-  padding: 5px;
+.board__input {
+  padding: 8px 35px 8px 8px;
   width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.board__input-container {
+  position: relative;
+  width: 100%;
+}
+
+.board__button {
+  padding-top: 4px;
+  padding-bottom: 4px;
   border: 0;
   border-radius: 5px;
-  background: var(--white-color)FFF;
   font-size: 18px;
-  font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-};
+  cursor: pointer;
+  transition: color 0.1s, background-color 0.1s, transform 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.board__button--add {
+  background-color: transparent;
+  color: #444e60;
+}
+
+.board__button--add:hover {
+  background-color: var(--white-color);
+}
+
+.board__button--submit {
+  margin-top: 15px;
+  padding: 4px 22px;
+  background-color: var(--white-color);
+}
+
+.board__button--submit:hover {
+  background-color: var(--main-background-color);
+  color: var(--white-color);
+}
+
+.board__button--add:active,
+.board__button--submit:active {
+  transform: scale(0.95);
+}
+
+.board__button:disabled {
+  color: #b8b8b8;
+  cursor: default;
+  transform: initial;
+}
+
+.board__button:disabled:hover {
+  background-color: transparent;
+}
+
+.board__button:disabled.board__button--submit {
+  background-color: var(--white-color);
+}
+
+.board__input-close {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  bottom: 0;
+  margin: auto 0;
+  width: 25px;
+  height: 25px;
+  border: 0;
+  border-radius: 5px;
+  background-color: var(--board-background-color);
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.board__input-close::before,
+.board__input-close::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 60%;
+  height: 1px;
+  background-color: var(--black-color);
+}
+
+.board__input-close::before {
+  transform: rotate(45deg);
+}
+.board__input-close::after {
+  transform: rotate(-45deg);
+}
+
+.board__add-task {
+  width: 100%;
+}

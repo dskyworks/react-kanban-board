@@ -31,6 +31,11 @@ const AddTask = ({ tasksList, setTasksList }) => {
     }
   };
 
+  const handleCloseAddingTask = () => {
+    setInputValue("");
+    setAddingTask(false);
+  }
+
   const handleKeyDown = (e) => {
     if (e.code === "Enter") {
       handleAddTask(e);
@@ -42,15 +47,22 @@ const AddTask = ({ tasksList, setTasksList }) => {
       {!addingTask ? (
         <AddCardButton setAddingTask={setAddingTask} />
       ) : (
-        <>
-          <input
-            className="board__input"
-            value={inputValue}
-            onChange={handleInputUpdate}
-            autoFocus={true}
-            required={true}
-            onKeyDown={handleKeyDown}
-          />
+        <div className="board__add-task">
+          <div className="board__input-container">
+            <input
+              className="board__input"
+              value={inputValue}
+              onChange={handleInputUpdate}
+              autoFocus={true}
+              required={true}
+              onKeyDown={handleKeyDown}
+            />
+            <button
+              className="board__input-close"
+              aria-roledescription="close adding card"
+              onClick={handleCloseAddingTask}
+            ></button>
+          </div>
           <button
             className={"board__button board__button--submit"}
             disabled={!inputValue}
@@ -59,7 +71,7 @@ const AddTask = ({ tasksList, setTasksList }) => {
           >
             Submit
           </button>
-        </>
+        </div>
       )}
     </>
   );

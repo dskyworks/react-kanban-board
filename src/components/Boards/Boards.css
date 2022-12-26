@@ -73,64 +73,6 @@
   text-decoration: none;
 }
 
-.board__input {
-  padding: 8px;
-  width: 100%;
-  border: none;
-  border-radius: 5px;
-  font-size: inherit;
-  font-family: inherit;
-}
-
-.board__button {
-  padding-top: 4px;
-  padding-bottom: 4px;
-  border: 0;
-  border-radius: 5px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: color 0.1s, background-color 0.1s, transform 0.1s;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.board__button--add {
-  background-color: transparent;
-  color: #444e60;
-}
-
-.board__button--add:hover {
-  background-color: var(--white-color);
-}
-
-.board__button--submit {
-  padding: 4px 22px;
-  background-color: var(--white-color);
-}
-
-.board__button--submit:hover {
-  background-color: var(--main-background-color);
-  color: var(--white-color);
-}
-
-.board__button--add:active,
-.board__button--submit:active {
-  transform: scale(0.95);
-}
-
-.board__button:disabled {
-  color: #b8b8b8;
-  cursor: default;
-  transform: initial;
-}
-
-.board__button:disabled:hover {
-  background-color: transparent;
-}
-
-.board__button:disabled.board__button--submit {
-  background-color: var(--white-color);
-}
-
 .dropdown-list {
   position: absolute;
   top: calc(100% - 53px);
