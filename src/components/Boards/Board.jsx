@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import AddTask from "../buttons/AddTask";
 
 const Board = ({ boardName, tasksList, setTasksList }) => {
   const [dropDownOpen, setDropDownOpen] = useState(false);
-
+  const dropDownRef = useRef(null);
   const board = tasksList.findIndex((e) => {
     let currentBoardIndex;
     if (boardName === e.boardName) {
@@ -48,9 +48,16 @@ const Board = ({ boardName, tasksList, setTasksList }) => {
       <li
         className="dropdown-item"
         key={e.id}
+        tabIndex={0}
         onClick={() => {
           handleMoveTask(idx);
           setDropDownOpen(!dropDownOpen);
+        }}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            handleMoveTask(idx);
+            setDropDownOpen(!dropDownOpen);
+          }
         }}
       >
         {e.name}
@@ -60,7 +67,11 @@ const Board = ({ boardName, tasksList, setTasksList }) => {
 
   const taskListItems = tasksList[board].tasks.map((e) => (
     <li key={e.id} className="board__item">
-      <Link draggable="false" to={`/tasks/${e.id}`}>
+      <Link
+        className="board__item-link"
+        draggable="false"
+        to={`/tasks/${e.id}`}
+      >
         {e.name}
       </Link>
     </li>
@@ -70,6 +81,12 @@ const Board = ({ boardName, tasksList, setTasksList }) => {
     localStorage.setItem("tasks_list", JSON.stringify(tasksList));
   }, [tasksList]);
 
+  useEffect(() => {
+    if (dropDownOpen) {
+      dropDownRef.current.focus();
+    }
+  }, [dropDownOpen]);
+
   return (
     <div className="board">
       <h2 className="board__heading">{boardName}</h2>
@@ -78,7 +95,15 @@ const Board = ({ boardName, tasksList, setTasksList }) => {
       )}
       {dropDownOpen && (
         <>
-          <div className="dropdown__select" onClick={toggleDropDown}></div>
+          <div
+            ref={dropDownRef}
+            className="dropdown__select"
+            tabIndex={0}
+            onClick={toggleDropDown}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") setDropDownOpen(false);
+            }}
+          ></div>
           <ul className="dropdown-list">{dropDownItems}</ul>
         </>
       )}

@@ -26,12 +26,12 @@
   position: relative;
   display: flex;
   align-items: center;
-  cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
 
 .header__avatar {
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .header__button {
@@ -78,7 +78,6 @@
   background-color: var(--white-color);
   color: var(--black-color);
   list-style: none;
-  cursor: pointer;
 }
 
 .profile__list::before {
