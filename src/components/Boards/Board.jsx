@@ -107,7 +107,7 @@ const Board = ({ boardName, tasksList, setTasksList }) => {
           <ul className="dropdown-list">{dropDownItems}</ul>
         </>
       )}
-      {addTaskButton}
+      {!dropDownOpen && addTaskButton}
     </div>
   );
 };
