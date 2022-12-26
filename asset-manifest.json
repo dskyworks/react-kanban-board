@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/react-kanban/static/css/main.5622829b.css",
-    "main.js": "/react-kanban/static/js/main.23d3e49b.js",
+    "main.js": "/react-kanban/static/js/main.f67a9255.js",
     "static/media/Roboto-Regular.ttf": "/react-kanban/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
     "static/media/user-avatar.svg": "/react-kanban/static/media/user-avatar.5c25c7975d8b9b57fe74ae6356f1acee.svg",
     "index.html": "/react-kanban/index.html",
     "static/media/header-profile-arrow.svg": "/react-kanban/static/media/header-profile-arrow.9bf3f8711ba85a40967c.svg",
     "main.5622829b.css.map": "/react-kanban/static/css/main.5622829b.css.map",
-    "main.23d3e49b.js.map": "/react-kanban/static/js/main.23d3e49b.js.map"
+    "main.f67a9255.js.map": "/react-kanban/static/js/main.f67a9255.js.map"
   },
   "entrypoints": [
     "static/css/main.5622829b.css",
-    "static/js/main.23d3e49b.js"
+    "static/js/main.f67a9255.js"
   ]
 }
