@@ -70,13 +70,18 @@ const EditTask = ({ tasksList, setTasksList }) => {
         <textarea
           className="task__description"
           type="text"
+          autoFocus={true}
           value={inputTaskDescriptionValue}
           placeholder="This task has no description"
           onChange={handleInputTaskDescriptionValue}
           onBlur={editTaskDescription}
         />
       </div>
-      <Link className="edit-task__close" to="/"></Link>
+      <Link
+        className="edit-task__close"
+        to="/"
+        aria-roledescription="Close task edit"
+      ></Link>
     </div>
   );
 };
