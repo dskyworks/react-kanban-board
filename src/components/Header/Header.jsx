@@ -30,6 +30,8 @@ const Header = () => {
           draggable="false"
           src={avatar}
           alt="User avatar"
+          width={40}
+          height={40}
         />
         <button
           className={
