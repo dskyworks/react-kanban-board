@@ -59,7 +59,7 @@ const AddTask = ({ tasksList, setTasksList }) => {
             />
             <button
               className="board__input-close"
-              aria-roledescription="close adding card"
+              aria-label="close adding card"
               onClick={handleCloseAddingTask}
             ></button>
           </div>

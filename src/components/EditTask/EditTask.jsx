@@ -80,7 +80,7 @@ const EditTask = ({ tasksList, setTasksList }) => {
       <Link
         className="edit-task__close"
         to="/"
-        aria-roledescription="Close task edit"
+        aria-label="Close task edit"
       ></Link>
     </div>
   );

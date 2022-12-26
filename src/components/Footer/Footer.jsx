@@ -10,7 +10,7 @@ const Footer = ({ tasksList }) => {
         <p className="footer__counter">Finished tasks: {finishedTasksCount}</p>
       </div>
       <div className="footer__copyright">
-        <p>Kanban board by ANN, 2022</p>
+        <p>Kanban board by dsw, 2022</p>
       </div>
     </footer>
   );
